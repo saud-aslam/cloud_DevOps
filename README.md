@@ -13,7 +13,7 @@ With Docker, each EC2 instance pulls the docker images from Dockerhub or Github,
 
 There are two Docker files, one in the base folder of trading-app, and the other in the psql folder.
 
-trading-app
+## trading-app
 
 The app is dockerized by the following lines from  `/dll/run_docker_app.sh`:
 
@@ -55,7 +55,7 @@ docker run --name jrvs-psql \
 
 The Dockerfile tells the image to inject the commands in  `/psql/sql_dll/schema.sql`  after creating the jrvstrading database, so the database is fully ready after being dockerized.
 
-# [](https://github.com/davidmiquelf/cloud_DevOps#aws-cloud)AWS Cloud
+# AWS Cloud
 
 I did a number of small experiments on AWS to deploy my project to the cloud, here is a summary of what I did:
 
@@ -65,9 +65,9 @@ I did a number of small experiments on AWS to deploy my project to the cloud, he
 -   Just to see if I could, I deleted my psql instance and used Amazon RDS to run an auto-generated psql database.
 -   I set up a load balancer and an autoscaling group to automatically launch/terminate instances depending on server load.
 
-[![cloud diagram](https://github.com/davidmiquelf/cloud_DevOps/raw/master/cloud_diagram.png)](https://github.com/davidmiquelf/cloud_DevOps/blob/master/cloud_diagram.png)
 
-# [](https://github.com/davidmiquelf/cloud_DevOps#jenkins-and-elastic-beanstalk)Jenkins and Elastic Beanstalk
+
+# Jenkins and Elastic Beanstalk
 
 The problem with the above approach is that it took a while to set it up, and updating my project way too time consuming. If I wanted to use a newer version of my app, I basically needed to log in to each instance and pull the latest docker image.  
 Luckliy, Elastic Beanstalk (EB) can fully automate the process. After setting up an EB project with the desired environment variables and port forwards, I can simply upload a jar file of the latest version of my trading-app to have it run on all the automatically generated instances. Then, whenever I want to update my project I simply upload a new jar file.
@@ -81,12 +81,12 @@ The first problem is easy: I created two EB projects -- tradingApp-dev and tradi
 
 For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenkins server behind an NGINX reverse proxy. I set up Jenkins to listen to the project's GitHub repo, pull new commits, build new jar files, then push them to EB. I set it up to listen to the dev branch for tradingApp-dev, and the master branch for tradingApp-prod.
 
-[![EB diagram](https://github.com/davidmiquelf/cloud_DevOps/raw/master/cloud_diagram_jenkins.png)](https://github.com/davidmiquelf/cloud_DevOps/blob/master/cloud_diagram_jenkins.png)
+
   <img src="src/assets/images/docker.png" alt="docker"></p>
     <img src="src/assets/images/trading-aws.png" alt="aws"></p>
 
   <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4NDAwNTM4LC0zOTQzMTc4MTBdfQ==
+eyJoaXN0b3J5IjpbMjA2ODIzMTkzNywtMzk0MzE3ODEwXX0=
 -->
