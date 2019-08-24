@@ -9,8 +9,10 @@ The deployment of this application to cloud was done on Amazon Web Services (AWS
 # Dockerize Trading Application
 
 The aim was to deploy the application on EC2 instances by running docker containers of our application on it. Since our application also runs Postgresql database, we need an extra container in addition of the parent application container. Both of these containers are independent to each other but we need them to communicate. For that a network bridge is created in docker. 
-
+#### DockerFiles
 There are two Dockerfiles each for each containers. These dockerfiles have commands in them which pulls docker images from DockerHub and creates local images in our docker and then when we run our local images, we get our containers. 
+
+
 
 
 
@@ -91,7 +93,7 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
   <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzkzMzAzMzIsNDc0MzE5MTk0LC0zMD
-UwMTc5ODAsMTgyNzAxMzgxMSwtMTYxNzYxODgyMiwyMDY4MjMx
-OTM3LC0zOTQzMTc4MTBdfQ==
+eyJoaXN0b3J5IjpbMTc2MTA4Nyw0NzQzMTkxOTQsLTMwNTAxNz
+k4MCwxODI3MDEzODExLC0xNjE3NjE4ODIyLDIwNjgyMzE5Mzcs
+LTM5NDMxNzgxMF19
 -->
