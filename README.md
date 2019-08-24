@@ -8,7 +8,7 @@ The deployment of this application to cloud was done on Amazon Web Services (AWS
 
 # Dockerize Trading Application
 
-The aim was to deploy the application on EC2 instan
+The aim was to deploy the application on EC2 instances by running docker containers of our application on it. Since our application also runs Postgresql database, 
 With Docker, each EC2 instance pulls the docker images from Dockerhub or Github, then creates and runs the containers. They originally ran psql locally, but in later iterations they simply connected to the RDS.
 
 
@@ -89,7 +89,7 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
   <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzI2NTY1Mzc5LC0zMDUwMTc5ODAsMTgyNz
-AxMzgxMSwtMTYxNzYxODgyMiwyMDY4MjMxOTM3LC0zOTQzMTc4
-MTBdfQ==
+eyJoaXN0b3J5IjpbMTk0MDIwMzg2NywtMzA1MDE3OTgwLDE4Mj
+cwMTM4MTEsLTE2MTc2MTg4MjIsMjA2ODIzMTkzNywtMzk0MzE3
+ODEwXX0=
 -->
