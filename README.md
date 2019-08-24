@@ -6,7 +6,7 @@ A walk through of how I deployed my trading-app project ([https://github.com/dav
 
 The trading-app simulates an API for posting, browsing, buying, and selling market quotes. It runs on EC2 micro instances that each have access to the same PostgreSQL RDS (Amazon relational database service).
 
-# [](https://github.com/davidmiquelf/cloud_DevOps#docker)Docker
+# Docker
 
 With Docker, each EC2 instance pulls the docker images from Dockerhub or Github, then creates and runs the containers. They originally ran psql locally, but in later iterations they simply connected to the RDS.
 
@@ -34,7 +34,7 @@ docker run -d \
 
 This command creates a trading-app image from the Dockerfile, then runs the container with specific environment variables.
 
-## [](https://github.com/davidmiquelf/cloud_DevOps#jrvs-psql)jrvs-psql
+## jrvs-psql
 
 The psql database is dockerized by similar lines in the script  `/dll/run_docker_psql.sh`:
 
@@ -88,5 +88,6 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
   <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2ODIzMTkzNywtMzk0MzE3ODEwXX0=
+eyJoaXN0b3J5IjpbMTA1MzkzODE5LDIwNjgyMzE5MzcsLTM5ND
+MxNzgxMF19
 -->
