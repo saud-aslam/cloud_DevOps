@@ -20,7 +20,7 @@ There are two Dockerfiles each for each containers. These dockerfiles have comma
 ## Commands to dockerize trading-app
 
 ```
- sudo docker network create --driver bridge trading-net .
+sudo docker network create --driver bridge trading-net .
 
 ```
 ```
@@ -46,9 +46,9 @@ This command creates a trading-app image from the Dockerfile, then runs the cont
 ```
 cd psql
 
-docker build -t jrvs-psql .
+sudo docker build -t jrvs-psql .
 
-docker run --name jrvs-psql \
+sudo docker run --name jrvs-psql \
 -e "POSTGRES_PASSWORD=$PSQL_PASSWORD" \
 -e POSTGRES_DB=jrvstrading \
 -e "POSTGRES_USER=$PSQL_USER" \
@@ -56,6 +56,11 @@ docker run --name jrvs-psql \
 -d -p 5432:5432 jrvs-psql
 
 ```
+
+This completes the process of dockerizing our application. The diagram below shows the process.
+
+ <img src="src/assets/images/docker.png" alt="docker"></p>
+
 # AWS Cloud
 
 I did a number of small experiments on AWS to deploy my project to the cloud, here is a summary of what I did:
@@ -83,13 +88,13 @@ The first problem is easy: I created two EB projects -- tradingApp-dev and tradi
 For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenkins server behind an NGINX reverse proxy. I set up Jenkins to listen to the project's GitHub repo, pull new commits, build new jar files, then push them to EB. I set it up to listen to the dev branch for tradingApp-dev, and the master branch for tradingApp-prod.
 
 
-  <img src="src/assets/images/docker.png" alt="docker"></p>
+ 
     <img src="src/assets/images/trading-aws.png" alt="aws"></p>
 
   <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA0NjkxMTMzOSwxNjMwNzQyMjAsNDc0Mz
+eyJoaXN0b3J5IjpbMTcwMjA0MDE2MiwxNjMwNzQyMjAsNDc0Mz
 E5MTk0LC0zMDUwMTc5ODAsMTgyNzAxMzgxMSwtMTYxNzYxODgy
 MiwyMDY4MjMxOTM3LC0zOTQzMTc4MTBdfQ==
 -->
