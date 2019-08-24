@@ -17,9 +17,8 @@ There are two Dockerfiles each for each containers. These dockerfiles have comma
 
 
 
-## Commands to dockerize
+## Commands to dockerize trading-app
 
-The app is dockerized by the following lines from  `/dll/run_docker_app.sh`:
 ```
 docker network create --driver bridge trading-net .
 
@@ -41,12 +40,11 @@ sudo docker run \
 
 This command creates a trading-app image from the Dockerfile, then runs the container with specific environment variables.
 
-## jrvs-psql
+## Commands to dockerize jrvs-psql
 
-The psql database is dockerized by similar lines in the script  `/dll/run_docker_psql.sh`:
 
 ```
-cd ../psql
+cd psql
 
 docker build -t jrvs-psql .
 
@@ -95,7 +93,7 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
   <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQ1MTg0NDQ3LDE2MzA3NDIyMCw0NzQzMT
-kxOTQsLTMwNTAxNzk4MCwxODI3MDEzODExLC0xNjE3NjE4ODIy
-LDIwNjgyMzE5MzcsLTM5NDMxNzgxMF19
+eyJoaXN0b3J5IjpbMjEwMzI0NDg2NSwxNjMwNzQyMjAsNDc0Mz
+E5MTk0LC0zMDUwMTc5ODAsMTgyNzAxMzgxMSwtMTYxNzYxODgy
+MiwyMDY4MjMxOTM3LC0zOTQzMTc4MTBdfQ==
 -->
