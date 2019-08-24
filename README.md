@@ -17,13 +17,17 @@ There are two Dockerfiles each for each containers. These dockerfiles have comma
 
 
 
-## Commands to docker
+## Commands to dockerize
 
 The app is dockerized by the following lines from  `/dll/run_docker_app.sh`:
+```
+docker network create --driver bridge trading-net .
 
+```
 ```
 docker build -t trading-app .
 
+```
 ```
 sudo docker run \
 -e "PSQL_URL=jdbc:postgresql://psql:5432/jrvstrading" \
@@ -91,7 +95,7 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
   <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgyMDU1MzQ4OSwxNjMwNzQyMjAsNDc0Mz
-E5MTk0LC0zMDUwMTc5ODAsMTgyNzAxMzgxMSwtMTYxNzYxODgy
-MiwyMDY4MjMxOTM3LC0zOTQzMTc4MTBdfQ==
+eyJoaXN0b3J5IjpbNjQ1MTg0NDQ3LDE2MzA3NDIyMCw0NzQzMT
+kxOTQsLTMwNTAxNzk4MCwxODI3MDEzODExLC0xNjE3NjE4ODIy
+LDIwNjgyMzE5MzcsLTM5NDMxNzgxMF19
 -->
