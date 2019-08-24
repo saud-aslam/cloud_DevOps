@@ -10,7 +10,7 @@ The deployment of this application to cloud was done on Amazon Web Services (AWS
 
 The aim was to deploy the application on EC2 instances by running docker containers of our application on it. Since our application also runs Postgresql database, we need an extra container in addition of the parent application container. Both of these containers are independent to each other but we need them to communicate. For that a network bridge is created in docker. 
 #### DockerFiles
-There are two Dockerfiles each for each containers. These dockerfiles have commands in them which pulls docker images from DockerHub and creates local images in our docker and then when we run our local images, we get our containers. The trading-app dockerfile loads two images from DockerHub:***Maven*** image which is used to build and package the source code by following pom.xml; ***openjdk:8-alpine*** which is use to run our java application; ***postgres*** which is used to run postgres database and also build all tables based on the scheme which is provided under *trading_ddl* folder.
+There are two Dockerfiles each for each containers. These dockerfiles have commands in them which pulls docker images from DockerHub and creates local images in our docker and then when we run our local images, we get our containers. The trading-app dockerfile loads two images from DockerHub:***Maven*** image which is used to build and package the source code by following pom.xml; ***openjdk:8-alpine*** which is use to run our java application; ***postgres*** which is used to run postgres database and  also build all tables based on the schema which is provided under *trading_ddl* folder.
 
 
 
@@ -20,11 +20,11 @@ There are two Dockerfiles each for each containers. These dockerfiles have comma
 ## Commands to dockerize trading-app
 
 ```
-docker network create --driver bridge trading-net .
+ sudo docker network create --driver bridge trading-net .
 
 ```
 ```
-docker build -t trading-app .
+sudo docker build -t trading-app .
 
 ```
 ```
@@ -49,7 +49,6 @@ cd psql
 docker build -t jrvs-psql .
 
 docker run --name jrvs-psql \
---restart unless-stopped \
 -e "POSTGRES_PASSWORD=$PSQL_PASSWORD" \
 -e POSTGRES_DB=jrvstrading \
 -e "POSTGRES_USER=$PSQL_USER" \
@@ -57,9 +56,6 @@ docker run --name jrvs-psql \
 -d -p 5432:5432 jrvs-psql
 
 ```
-
-The Dockerfile tells the image to inject the commands in  `/psql/sql_dll/schema.sql`  after creating the jrvstrading database, so the database is fully ready after being dockerized.
-
 # AWS Cloud
 
 I did a number of small experiments on AWS to deploy my project to the cloud, here is a summary of what I did:
@@ -93,7 +89,7 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
   <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEwMzI0NDg2NSwxNjMwNzQyMjAsNDc0Mz
+eyJoaXN0b3J5IjpbMTA0NjkxMTMzOSwxNjMwNzQyMjAsNDc0Mz
 E5MTk0LC0zMDUwMTc5ODAsMTgyNzAxMzgxMSwtMTYxNzYxODgy
 MiwyMDY4MjMxOTM3LC0zOTQzMTc4MTBdfQ==
 -->
