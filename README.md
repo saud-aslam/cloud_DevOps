@@ -6,8 +6,9 @@ In this README, you will get to know how I was able to deploy my Trading-Applica
 The deployment of this application to cloud was done on Amazon Web Services (AWS). But before that we dockerized our trading-application so that we can load our application containers on remote servers (EC2 instances). We, then, did manual deployment on AWS cloud. After manually deploying our application, we used Elastic Beanstalk to automatically manage our application on Cloud. Lastly, we used CI/CD pipeline through Jenkins, to further automate our deployment process.
 
 
-# Dockerize a
+# Dockerize Trading Application
 
+The aim was to deploy the application on EC2 instan
 With Docker, each EC2 instance pulls the docker images from Dockerhub or Github, then creates and runs the containers. They originally ran psql locally, but in later iterations they simply connected to the RDS.
 
 
@@ -88,7 +89,7 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
   <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NTU0NzIzMDMsLTMwNTAxNzk4MCwxOD
-I3MDEzODExLC0xNjE3NjE4ODIyLDIwNjgyMzE5MzcsLTM5NDMx
-NzgxMF19
+eyJoaXN0b3J5IjpbNzI2NTY1Mzc5LC0zMDUwMTc5ODAsMTgyNz
+AxMzgxMSwtMTYxNzYxODgyMiwyMDY4MjMxOTM3LC0zOTQzMTc4
+MTBdfQ==
 -->
