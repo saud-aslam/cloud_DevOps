@@ -1,7 +1,7 @@
 
 
 # Introduction
-In this README, you will get to know how I was able to deploy my Trading
+In this README, you will get to know how I was able to deploy my Trading-Application. The trading-app (
 A walk through of how I deployed my trading-app project ([https://github.com/davidmiquelf/trading-app](https://github.com/davidmiquelf/trading-app)) to AWS cloud. First a manual deployment with Docker, then an automated one with Elastic Beanstalk and Jenkins.
 
 The trading-app simulates an API for posting, browsing, buying, and selling market quotes. It runs on EC2 micro instances that each have access to the same PostgreSQL RDS (Amazon relational database service).
@@ -88,6 +88,6 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
   <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMDUyNjg3ODQsMjA2ODIzMTkzNywtMz
+eyJoaXN0b3J5IjpbLTE5Nzg0OTkxNjUsMjA2ODIzMTkzNywtMz
 k0MzE3ODEwXX0=
 -->
