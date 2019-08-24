@@ -10,27 +10,26 @@ The deployment of this application to cloud was done on Amazon Web Services (AWS
 
 The aim was to deploy the application on EC2 instances by running docker containers of our application on it. Since our application also runs Postgresql database, we need an extra container in addition of the parent application container. Both of these containers are independent to each other but we need them to communicate. For that a network bridge is created in docker. 
 #### DockerFiles
-There are two Dockerfiles each for each containers. These dockerfiles have commands in them which pulls docker images from DockerHub and creates local images in our docker and then when we run our local images, we get our containers. The trading-app dockerfile loads two images from DockerHub:***Maven*** image which is used to build and package the source code by following pom.xml; ***openjdk:8-alpine*** which is use to run our java application; ***postgres*** which is used to run postgres database and also build all tables based on the scheme which is provided under trading_ddl folder
+There are two Dockerfiles each for each containers. These dockerfiles have commands in them which pulls docker images from DockerHub and creates local images in our docker and then when we run our local images, we get our containers. The trading-app dockerfile loads two images from DockerHub:***Maven*** image which is used to build and package the source code by following pom.xml; ***openjdk:8-alpine*** which is use to run our java application; ***postgres*** which is used to run postgres database and also build all tables based on the scheme which is provided under *trading_ddl* folder.
 
 
 
 
 
 
-## trading-app
+## Commands to docker
 
 The app is dockerized by the following lines from  `/dll/run_docker_app.sh`:
 
 ```
 docker build -t trading-app .
 
-docker run -d \
---restart unless-stopped \
--e "PSQL_URL=$PSQL_URL" \
--e "PSQL_USER=$PSQL_USER" \
--e "PSQL_PASSWORD=$PSQL_PASSWORD" \
--e "IEX_PUB_TOKEN=$IEX_PUB_TOKEN" \
---name trading-app \
+```
+sudo docker run \
+-e "PSQL_URL=jdbc:postgresql://psql:5432/jrvstrading" \
+-e "PSQL_USER=postgres" \
+-e 'PSQL_PASSWORD=password' \
+-e "IEX_PUB_TOKEN=YOUR_TOKEN" \
 --network trading-net \
 -p 8080:8080 -t trading-app
 
@@ -92,7 +91,7 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
   <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzAxMjUxNTYzLDE2MzA3NDIyMCw0NzQzMT
-kxOTQsLTMwNTAxNzk4MCwxODI3MDEzODExLC0xNjE3NjE4ODIy
-LDIwNjgyMzE5MzcsLTM5NDMxNzgxMF19
+eyJoaXN0b3J5IjpbMTgyMDU1MzQ4OSwxNjMwNzQyMjAsNDc0Mz
+E5MTk0LC0zMDUwMTc5ODAsMTgyNzAxMzgxMSwtMTYxNzYxODgy
+MiwyMDY4MjMxOTM3LC0zOTQzMTc4MTBdfQ==
 -->
