@@ -3,8 +3,8 @@
 # Introduction
 In this README, you will get to know how I was able to deploy my Trading-Application. The trading-app ([https://github.com/saud-aslam/trading-app](https://github.com/saud-aslam/trading-app)) is an online stock trading simulation REST API which can be used to create an account which would allow account holder to buy and sell stocks from Investor Exchange i.e IEX. Traders can withdraw money and/or deposit money into their account. They can also view latest quotes of any stock directly from this application. This REST API can be used by front-end developers, mobile-app developers, and traders. The architecture used here is based on microservices concept which is implemented using SpringBoot, IEX API and PSQL database. The SpringBoot controller embeds Apache Tomcat which binds our application with HTTP requests.
 
-The deployment of this application to cloud was done on Amazon Web Services (AWS). 
-(https://github.com/davidmiquelf/trading-app)) to AWS cloud. First a manual deployment with Docker, then an automated one with Elastic Beanstalk and Jenkins.
+The deployment of this application to cloud was done on Amazon Web Services (AWS). But before that we used Docker to manually 
+
 
 The trading-app simulates an API for posting, browsing, buying, and selling market quotes. It runs on EC2 micro instances that each have access to the same PostgreSQL RDS (Amazon relational database service).
 
@@ -90,6 +90,6 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
   <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MTc2MTg4MjIsMjA2ODIzMTkzNywtMz
-k0MzE3ODEwXX0=
+eyJoaXN0b3J5IjpbMTgyNzAxMzgxMSwtMTYxNzYxODgyMiwyMD
+Y4MjMxOTM3LC0zOTQzMTc4MTBdfQ==
 -->
