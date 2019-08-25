@@ -73,7 +73,7 @@ Once the instance is running, it was time to configure the instance to run the t
 - Install docker 
 - Start and Enable docker
 - Install Git and Clone git trading-app repo : `git clone https://github.com/saud-aslam/trading-app`
-- docker build and run to dockerize the app and mentioned below.
+- docker build and run to dockerize the app as mentioned above.
 -ssh to EC2 public ip from the laptop's browser as like this: http://{EC2_pubic_ip}:8080/swagger-ui.html
 
 The below diagram shows how the the ec2 server resides the docker containers.
@@ -103,10 +103,10 @@ This diagram shows the architecture of the deployment with Elastic Beanstalk and
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MTc2ODk1NiwtMjA3NDE0MTc0NSw1Nj
-E4NTMxMjEsLTQ4MzgzOTE4Niw5NzE3NzEyNTEsMTg4MjQzMjgw
-NSwtMjE2OTA0NTU3LC0xMzQwOTQ5MTQ0LDE0MjEwMjg4MDEsLT
-Q5NzE1OTMyOSwxNjMwNzQyMjAsNDc0MzE5MTk0LC0zMDUwMTc5
-ODAsMTgyNzAxMzgxMSwtMTYxNzYxODgyMiwyMDY4MjMxOTM3LC
-0zOTQzMTc4MTBdfQ==
+eyJoaXN0b3J5IjpbLTMxODU0OTY5OSwtMTYxNzY4OTU2LC0yMD
+c0MTQxNzQ1LDU2MTg1MzEyMSwtNDgzODM5MTg2LDk3MTc3MTI1
+MSwxODgyNDMyODA1LC0yMTY5MDQ1NTcsLTEzNDA5NDkxNDQsMT
+QyMTAyODgwMSwtNDk3MTU5MzI5LDE2MzA3NDIyMCw0NzQzMTkx
+OTQsLTMwNTAxNzk4MCwxODI3MDEzODExLC0xNjE3NjE4ODIyLD
+IwNjgyMzE5MzcsLTM5NDMxNzgxMF19
 -->
