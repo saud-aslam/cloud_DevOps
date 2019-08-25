@@ -95,7 +95,8 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
   <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQyMTAyODgwMSwtNDk3MTU5MzI5LDE2Mz
-A3NDIyMCw0NzQzMTkxOTQsLTMwNTAxNzk4MCwxODI3MDEzODEx
-LC0xNjE3NjE4ODIyLDIwNjgyMzE5MzcsLTM5NDMxNzgxMF19
+eyJoaXN0b3J5IjpbLTE4NjA2ODI4MjcsMTQyMTAyODgwMSwtND
+k3MTU5MzI5LDE2MzA3NDIyMCw0NzQzMTkxOTQsLTMwNTAxNzk4
+MCwxODI3MDEzODExLC0xNjE3NjE4ODIyLDIwNjgyMzE5MzcsLT
+M5NDMxNzgxMF19
 -->
