@@ -58,8 +58,7 @@ sudo docker run --name jrvs-psql \
 This completes the process of dockerizing our application. The diagram below shows the process.
  <p align="center">
  <img src="src/assets/images/docker.png" alt="docker"></p>
-  <p align="center">
-  <img src="src/assets/images/docker1.png" alt="aws"></p>
+  
 
 
 # Manual Deployment on AWS cloud
@@ -76,13 +75,10 @@ Once the instance is running, it was time to configure the instance to run the t
 - docker build and run to dockerize the app and mentioned below.
 -ssh to EC2 public ip from the laptop's browser as like this: http://{EC2_pubic_ip}:8080/swagger-ui.html
 
-The below diagram 
+The below diagram shows how the the ec2 server resides the docker containers.
 
--   Now that I had docker images and scripts to dockerize my application, I could quickly set up my application on an Amazon EC2 instance.
--   I created an image of that instance so that I could launch copies of it from a launch template.
--   Rather than running jrvs-psql on each instance, I set up a single instance to run jrvs-psql, and allowed the other instances in the VPC (virtual private cloud) to access it.
--   Just to see if I could, I deleted my psql instance and used Amazon RDS to run an auto-generated psql database.
--   I set up a load balancer and an autoscaling group to automatically launch/terminate instances depending on server load.
+<p align="center">
+  <img src="src/assets/images/docker1.png" alt="aws"></p>
 
 
 
@@ -107,8 +103,8 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
   <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMTk0MzI2NzUsMTQyMTAyODgwMSwtND
-k3MTU5MzI5LDE2MzA3NDIyMCw0NzQzMTkxOTQsLTMwNTAxNzk4
-MCwxODI3MDEzODExLC0xNjE3NjE4ODIyLDIwNjgyMzE5MzcsLT
-M5NDMxNzgxMF19
+eyJoaXN0b3J5IjpbNjM4ODQ5NTgsMTQyMTAyODgwMSwtNDk3MT
+U5MzI5LDE2MzA3NDIyMCw0NzQzMTkxOTQsLTMwNTAxNzk4MCwx
+ODI3MDEzODExLC0xNjE3NjE4ODIyLDIwNjgyMzE5MzcsLTM5ND
+MxNzgxMF19
 -->
