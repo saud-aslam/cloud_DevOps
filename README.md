@@ -69,7 +69,8 @@ To deploy the application on AWS cloud, I did some configuration on Amazon Web s
 - Create a security group with TCP 8080 protocol.
 - Launch the instance.
 
-Once
+Once the instance is running, it was time to configure the instance to run the trading-app. To do it :
+- Install do
 
 -   Now that I had docker images and scripts to dockerize my application, I could quickly set up my application on an Amazon EC2 instance.
 -   I created an image of that instance so that I could launch copies of it from a launch template.
@@ -100,7 +101,7 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
   <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI4MTIzMTE5MywxNDIxMDI4ODAxLC00OT
+eyJoaXN0b3J5IjpbLTk1OTYzODc1MCwxNDIxMDI4ODAxLC00OT
 cxNTkzMjksMTYzMDc0MjIwLDQ3NDMxOTE5NCwtMzA1MDE3OTgw
 LDE4MjcwMTM4MTEsLTE2MTc2MTg4MjIsMjA2ODIzMTkzNywtMz
 k0MzE3ODEwXX0=
