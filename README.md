@@ -65,8 +65,12 @@ This completes the process of dockerizing our application. The diagram below sho
 # Manual Deployment on AWS cloud
 
 To deploy the application on AWS cloud, I did some configuration on Amazon Web services platform as follows:
-- Provison a EC2 instance
-- Create a security group
+- Provison a EC2 instance.
+- Create a security group with TCP 8080 protocol.
+- Launch the instance.
+
+Once
+
 -   Now that I had docker images and scripts to dockerize my application, I could quickly set up my application on an Amazon EC2 instance.
 -   I created an image of that instance so that I could launch copies of it from a launch template.
 -   Rather than running jrvs-psql on each instance, I set up a single instance to run jrvs-psql, and allowed the other instances in the VPC (virtual private cloud) to access it.
@@ -96,7 +100,7 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
   <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU4MDAxNDQ1MSwxNDIxMDI4ODAxLC00OT
+eyJoaXN0b3J5IjpbLTI4MTIzMTE5MywxNDIxMDI4ODAxLC00OT
 cxNTkzMjksMTYzMDc0MjIwLDQ3NDMxOTE5NCwtMzA1MDE3OTgw
 LDE4MjcwMTM4MTEsLTE2MTc2MTg4MjIsMjA2ODIzMTkzNywtMz
 k0MzE3ODEwXX0=
