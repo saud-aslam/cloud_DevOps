@@ -85,6 +85,7 @@ So far in the manual deployment we used our local database which is running on E
 The architecture is shown below.
 <p align="center">
 <img src="src/assets/images/trading-aws.png" alt="aws"></p>
+
 # Jenkins and Elastic Beanstalk
 
 The problem with the above approach is that it took a while to set it up, and updating my project way too time consuming. If I wanted to use a newer version of my app, I basically needed to log in to each instance and pull the latest docker image.  
@@ -106,8 +107,8 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
 <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MzE5Nzg0MDQsLTIxNjkwNDU1NywtMT
-M0MDk0OTE0NCwxNDIxMDI4ODAxLC00OTcxNTkzMjksMTYzMDc0
-MjIwLDQ3NDMxOTE5NCwtMzA1MDE3OTgwLDE4MjcwMTM4MTEsLT
-E2MTc2MTg4MjIsMjA2ODIzMTkzNywtMzk0MzE3ODEwXX0=
+eyJoaXN0b3J5IjpbLTE4Mjg0Mzk4NiwtMjE2OTA0NTU3LC0xMz
+QwOTQ5MTQ0LDE0MjEwMjg4MDEsLTQ5NzE1OTMyOSwxNjMwNzQy
+MjAsNDc0MzE5MTk0LC0zMDUwMTc5ODAsMTgyNzAxMzgxMSwtMT
+YxNzYxODgyMiwyMDY4MjMxOTM3LC0zOTQzMTc4MTBdfQ==
 -->
