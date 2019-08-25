@@ -92,41 +92,20 @@ The manual deployment of our trading-app which is performed above has a problem 
 
 This problem is solved by using Elastic Beanstalk (EB). By using this service of AWS, one can fully rely on EB to manage and upload the latest version of the code in all the running instances. All we need to do is to *mvn package* our source code and upload the jar/zip file. We also created two environment, namely, Development and Production.
 
-Going further, we did more automation as we wanted to get rid of maven packaging and uploading our application jar/zip file every time there is a change in the code. To achieve this, we created a CI/CD pipeline by using Jenkins. Basically a Jenkinfiles is needed by Jenkins which manages this pipeline process. Whenever there is a new commit in the github repository, the jenkin server sitting in a newly created EC2 instance, will git pull and then  mvn package followed by creating the jar/zip of our application would either deploy our application on production or development environment based on the github branch being committed. The eb_deploy scripts are called in the Jenkinfiles. These scripts deploy the application
-
-
-In the last method all components had to be configured manually and every code update had to be deployed manually on every running instance, which is a lot of work. AWS provids the service Elastic Beanstalk to make this process easier. Elastic Beanstalk requires one setup and then it automatically handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring. When there are changes in the code, the new code can be uploaded once and EB takes care of updating every EC2 instance.
-
-The need to manually upload new code can be eliminated by using a CI/CD (Continuous Integration/Continuous Deployment) pipeline. In this project Jenkins was used to created such a pipeline. Jenkins monitors the trading_app GitHub repository. Whenever there is a new commit it will automatically compile, package, and deploy the new code to all running EC2 instances.
-
-Jenkins requires a  [Jenkinsfiles](https://github.com/MiriamEA/trading_app/blob/master/Jenkinsfile)  that specifies how to handle the new code. The stage 'Build' packages the code using maven. The two stages 'Deploy-prod' and 'Deploy-dev' call script to deploy the code. The argument specifies which EB environment to use. This depends on the GitHub branch that was compiled. The actual deployment is done by the  [eb_deploy script](https://github.com/MiriamEA/trading_app/blob/master/scripts/eb_deploy.sh)  using the Elastic Beanstalk Command Line Interface.
-
+Going further, we did more automation as we wanted to get rid of maven packaging and uploading our application jar/zip file every time there is a change in the code. To achieve this, we created a CI/CD pipeline by using Jenkins. Basically a Jenkinfiles is needed by Jenkins which manages this pipeline process. Whenever there is a new commit in the github repository, the jenkin server sitting in a newly created EC2 instance, will git pull and then  mvn package followed by creating the jar/zip of our application would either deploy our application on production or development environment based on the github branch being committed. The eb_deploy scripts are called in the Jenkinfiles. These scripts deploy the application's jar/zip file.
 This diagram shows the architecture of the deployment with EB and Jenkins.
 
  <p align="center">
 <img src="src/assets/images/Jenkins.png" alt="jenkins" width="800" height="800"></p>
 
 
-The problem with the above approach is that it took a while to set it up, and updating my project way too time consuming. If I wanted to use a newer version of my app, I basically needed to log in to each instance and pull the latest docker image.  
-Luckliy, Elastic Beanstalk (EB) can fully automate the process. After setting up an EB project with the desired environment variables and port forwards, I can simply upload a jar file of the latest version of my trading-app to have it run on all the automatically generated instances. Then, whenever I want to update my project I simply upload a new jar file.
 
-But there are two problems to consider:
-
-1.  In a production environment I don't want to upload a jar file to find out it crashed all my servers.
-2.  I don't want every developer logging in to AWS and uploading their own jar files onto the same project.
-
-The first problem is easy: I created two EB projects -- tradingApp-dev and tradingApp-prod -- that way I could test my new jar files on the dev servers first.
-
-For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenkins server behind an NGINX reverse proxy. I set up Jenkins to listen to the project's GitHub repo, pull new commits, build new jar files, then push them to EB. I set it up to listen to the dev branch for tradingApp-dev, and the master branch for tradingApp-prod.
-
-
- 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNzc1NTQ5ODgsLTQ4MzgzOTE4Niw5Nz
-E3NzEyNTEsMTg4MjQzMjgwNSwtMjE2OTA0NTU3LC0xMzQwOTQ5
-MTQ0LDE0MjEwMjg4MDEsLTQ5NzE1OTMyOSwxNjMwNzQyMjAsND
-c0MzE5MTk0LC0zMDUwMTc5ODAsMTgyNzAxMzgxMSwtMTYxNzYx
-ODgyMiwyMDY4MjMxOTM3LC0zOTQzMTc4MTBdfQ==
+eyJoaXN0b3J5IjpbLTI3MDQxMzM0NCwtNDgzODM5MTg2LDk3MT
+c3MTI1MSwxODgyNDMyODA1LC0yMTY5MDQ1NTcsLTEzNDA5NDkx
+NDQsMTQyMTAyODgwMSwtNDk3MTU5MzI5LDE2MzA3NDIyMCw0Nz
+QzMTkxOTQsLTMwNTAxNzk4MCwxODI3MDEzODExLC0xNjE3NjE4
+ODIyLDIwNjgyMzE5MzcsLTM5NDMxNzgxMF19
 -->
