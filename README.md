@@ -58,6 +58,7 @@ sudo docker run --name jrvs-psql \
 This completes the process of dockerizing our application. The diagram below shows the process.
  <p align="center">
  <img src="src/assets/images/docker.png" alt="docker"></p>
+  <p align="center">
   <img src="src/assets/images/docker1.png" alt="aws"></p>
 
 
