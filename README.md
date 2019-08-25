@@ -93,7 +93,7 @@ The manual deployment of our trading-app which is performed above has a problem 
 This problem is solved by using Elastic Beanstalk (EB). By using this service of AWS, one can fully rely on EB to manage and upload the latest version of the code in all the running instances. All we need to do is to *mvn package* our source code and upload the jar/zip file. We also created two environment, namely, Development and Production.
 
 Going further, we did more automation as we wanted to get rid of maven packaging and uploading our application jar/zip file every time there is a change in the code. To achieve this, we created a CI/CD pipeline by using Jenkins. Basically a Jenkinfiles is needed by Jenkins which manages this pipeline process. Whenever there is a new commit in the github repository, the jenkin server sitting in a newly created EC2 instance, will git pull and then  mvn package followed by creating the jar/zip of our application would either deploy our application on production or development environment based on the github branch being committed. The eb_deploy scripts are called in the Jenkinfiles. These scripts deploy the application's jar/zip file.
-This diagram shows the architecture of the deployment with EB and Jenkins.
+This diagram shows the architecture of the deployment with Elastic Beanstalk and Jenkins.
 
  <p align="center">
 <img src="src/assets/images/Jenkins.png" alt="jenkins" width="800" height="800"></p>
@@ -103,9 +103,9 @@ This diagram shows the architecture of the deployment with EB and Jenkins.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3MDQxMzM0NCwtNDgzODM5MTg2LDk3MT
-c3MTI1MSwxODgyNDMyODA1LC0yMTY5MDQ1NTcsLTEzNDA5NDkx
-NDQsMTQyMTAyODgwMSwtNDk3MTU5MzI5LDE2MzA3NDIyMCw0Nz
-QzMTkxOTQsLTMwNTAxNzk4MCwxODI3MDEzODExLC0xNjE3NjE4
-ODIyLDIwNjgyMzE5MzcsLTM5NDMxNzgxMF19
+eyJoaXN0b3J5IjpbNTYxODUzMTIxLC00ODM4MzkxODYsOTcxNz
+cxMjUxLDE4ODI0MzI4MDUsLTIxNjkwNDU1NywtMTM0MDk0OTE0
+NCwxNDIxMDI4ODAxLC00OTcxNTkzMjksMTYzMDc0MjIwLDQ3ND
+MxOTE5NCwtMzA1MDE3OTgwLDE4MjcwMTM4MTEsLTE2MTc2MTg4
+MjIsMjA2ODIzMTkzNywtMzk0MzE3ODEwXX0=
 -->
