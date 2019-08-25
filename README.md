@@ -92,7 +92,7 @@ The manual deployment of our trading-app which is performed above has a problem 
 
 This problem is solved by using Elastic Beanstalk (EB). By using this service of AWS, one can fully rely on EB to manage and upload the latest version of the code in all the running instances. All we need to do is to *mvn package* our source code and upload the jar/zip file. We also created two environment, namely, Development and Production.
 
-Going further, we did more automation as we wanted to get rid of 
+Going further, we did more automation as we wanted to get rid of maven packaging and uploading our application jar/zip file every time there is a change in the code. To achieve this, Jenkins was used.
 
 
 
@@ -125,7 +125,7 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTc2MzgwNTc4LDk3MTc3MTI1MSwxODgyND
+eyJoaXN0b3J5IjpbNDM5MjEwOTE1LDk3MTc3MTI1MSwxODgyND
 MyODA1LC0yMTY5MDQ1NTcsLTEzNDA5NDkxNDQsMTQyMTAyODgw
 MSwtNDk3MTU5MzI5LDE2MzA3NDIyMCw0NzQzMTkxOTQsLTMwNT
 AxNzk4MCwxODI3MDEzODExLC0xNjE3NjE4ODIyLDIwNjgyMzE5
