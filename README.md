@@ -97,14 +97,15 @@ The first problem is easy: I created two EB projects -- tradingApp-dev and tradi
 For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenkins server behind an NGINX reverse proxy. I set up Jenkins to listen to the project's GitHub repo, pull new commits, build new jar files, then push them to EB. I set it up to listen to the dev branch for tradingApp-dev, and the master branch for tradingApp-prod.
 
 
- 
-   <img src="src/assets/images/trading-aws.png" alt="aws"></p>
+ <p align="center">
+<img src="src/assets/images/trading-aws.png" alt="aws"></p>
 
-  <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
+  <p align="center">
+<img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjM4ODQ5NTgsMTQyMTAyODgwMSwtNDk3MT
-U5MzI5LDE2MzA3NDIyMCw0NzQzMTkxOTQsLTMwNTAxNzk4MCwx
-ODI3MDEzODExLC0xNjE3NjE4ODIyLDIwNjgyMzE5MzcsLTM5ND
-MxNzgxMF19
+eyJoaXN0b3J5IjpbLTEzNDA5NDkxNDQsMTQyMTAyODgwMSwtND
+k3MTU5MzI5LDE2MzA3NDIyMCw0NzQzMTkxOTQsLTMwNTAxNzk4
+MCwxODI3MDEzODExLC0xNjE3NjE4ODIyLDIwNjgyMzE5MzcsLT
+M5NDMxNzgxMF19
 -->
