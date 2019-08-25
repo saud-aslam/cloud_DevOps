@@ -88,6 +88,8 @@ The architecture is shown below.
 
 # Elastic Beanstalk and Jenkins
 
+The manual deployment of our trading-app which is performed above has few problems.  
+
 In the last method all components had to be configured manually and every code update had to be deployed manually on every running instance, which is a lot of work. AWS provids the service Elastic Beanstalk to make this process easier. Elastic Beanstalk requires one setup and then it automatically handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring. When there are changes in the code, the new code can be uploaded once and EB takes care of updating every EC2 instance.
 
 The need to manually upload new code can be eliminated by using a CI/CD (Continuous Integration/Continuous Deployment) pipeline. In this project Jenkins was used to created such a pipeline. Jenkins monitors the trading_app GitHub repository. Whenever there is a new commit it will automatically compile, package, and deploy the new code to all running EC2 instances.
@@ -117,9 +119,9 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjUxMDk1NjgxLDk3MTc3MTI1MSwxODgyND
-MyODA1LC0yMTY5MDQ1NTcsLTEzNDA5NDkxNDQsMTQyMTAyODgw
-MSwtNDk3MTU5MzI5LDE2MzA3NDIyMCw0NzQzMTkxOTQsLTMwNT
-AxNzk4MCwxODI3MDEzODExLC0xNjE3NjE4ODIyLDIwNjgyMzE5
-MzcsLTM5NDMxNzgxMF19
+eyJoaXN0b3J5IjpbLTE0OTE1NDUzNzMsOTcxNzcxMjUxLDE4OD
+I0MzI4MDUsLTIxNjkwNDU1NywtMTM0MDk0OTE0NCwxNDIxMDI4
+ODAxLC00OTcxNTkzMjksMTYzMDc0MjIwLDQ3NDMxOTE5NCwtMz
+A1MDE3OTgwLDE4MjcwMTM4MTEsLTE2MTc2MTg4MjIsMjA2ODIz
+MTkzNywtMzk0MzE3ODEwXX0=
 -->
