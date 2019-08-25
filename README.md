@@ -73,8 +73,8 @@ Once the instance is running, it was time to configure the instance to run the t
 - Install docker 
 - Start and Enable docker
 - Install Git and Clone git trading-app repo : `git clone https://github.com/saud-aslam/trading-app`
-- docker build and run to dockerize the app as mentioned above.
--ssh to EC2 public ip from the laptop's browser as like this: http://{EC2_pubic_ip}:8080/swagger-ui.html
+- Docker build and run to dockerize the app as mentioned above.
+- SSH to EC2 public ip from the laptop's browser as like this: http://{EC2_pubic_ip}:8080/swagger-ui.html
 
 The below diagram shows how the the ec2 server resides the docker containers.
 <p align="center">
