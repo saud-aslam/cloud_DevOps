@@ -72,7 +72,7 @@ Once the instance is running, it was time to configure the instance to run the t
 - SSH to the ec2 server : `ssh -i ~/.ssh/pem/you_pem_key ec2-user@ec2_pub_ip`. Note: pem keys would be prompted to be generated when creating an instance. You need to store that key in .ssh directory of your local machine.
 - Install docker 
 - Start and Enable docker
-- Install Git and Clone git trading-app repo : `git clone https://[https://github.com/saud-aslam/trading-app`
+- Install Git and Clone git trading-app repo : `git clone https://github.com/saud-aslam/trading-app`
 - docker build and run to dockerize the app and mentioned below.
 -ssh to EC2 public ip from the laptop's browser as like this: http://{EC2_pubic_ip}:8080/swagger-ui.html
 
@@ -103,9 +103,10 @@ This diagram shows the architecture of the deployment with Elastic Beanstalk and
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTYxODUzMTIxLC00ODM4MzkxODYsOTcxNz
-cxMjUxLDE4ODI0MzI4MDUsLTIxNjkwNDU1NywtMTM0MDk0OTE0
-NCwxNDIxMDI4ODAxLC00OTcxNTkzMjksMTYzMDc0MjIwLDQ3ND
-MxOTE5NCwtMzA1MDE3OTgwLDE4MjcwMTM4MTEsLTE2MTc2MTg4
-MjIsMjA2ODIzMTkzNywtMzk0MzE3ODEwXX0=
+eyJoaXN0b3J5IjpbLTIwNzQxNDE3NDUsNTYxODUzMTIxLC00OD
+M4MzkxODYsOTcxNzcxMjUxLDE4ODI0MzI4MDUsLTIxNjkwNDU1
+NywtMTM0MDk0OTE0NCwxNDIxMDI4ODAxLC00OTcxNTkzMjksMT
+YzMDc0MjIwLDQ3NDMxOTE5NCwtMzA1MDE3OTgwLDE4MjcwMTM4
+MTEsLTE2MTc2MTg4MjIsMjA2ODIzMTkzNywtMzk0MzE3ODEwXX
+0=
 -->
