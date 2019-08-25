@@ -104,11 +104,11 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
  
 
   <p align="center">
-<img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
+<img src="src/assets/images/Jenkins.png" alt="jenkins" width="200" height="400"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4Mjg0Mzk4NiwtMjE2OTA0NTU3LC0xMz
-QwOTQ5MTQ0LDE0MjEwMjg4MDEsLTQ5NzE1OTMyOSwxNjMwNzQy
-MjAsNDc0MzE5MTk0LC0zMDUwMTc5ODAsMTgyNzAxMzgxMSwtMT
-YxNzYxODgyMiwyMDY4MjMxOTM3LC0zOTQzMTc4MTBdfQ==
+eyJoaXN0b3J5IjpbNTA0Njg3MDc5LC0yMTY5MDQ1NTcsLTEzND
+A5NDkxNDQsMTQyMTAyODgwMSwtNDk3MTU5MzI5LDE2MzA3NDIy
+MCw0NzQzMTkxOTQsLTMwNTAxNzk4MCwxODI3MDEzODExLC0xNj
+E3NjE4ODIyLDIwNjgyMzE5MzcsLTM5NDMxNzgxMF19
 -->
