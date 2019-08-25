@@ -92,7 +92,7 @@ The manual deployment of our trading-app which is performed above has a problem 
 
 This problem is solved by using Elastic Beanstalk (EB). By using this service of AWS, one can fully rely on EB to manage and upload the latest version of the code in all the running instances. All we need to do is to *mvn package* our source code and upload the jar/zip file. We also created two environment, namely, Development and Production.
 
-Going further, we did more automation as we wanted to get rid of maven packaging and uploading our application jar/zip file every time there is a change in the code. To achieve this, we created a CI/CD pipeline by using Jenkins. Basically a Jenkinfiles is needed by Jenkins which manages this pipeline process. Whenever there is a new commit in the github repository, the jenkin server sitting in a newly created EC2 instance, will gitt pull and then  mvn package followed by creating the jar/zip of our application would either deploy our application on production or development environment based on the github branch being committed. The eb_deploy scripts are called in the Jenkinfiles with 
+Going further, we did more automation as we wanted to get rid of maven packaging and uploading our application jar/zip file every time there is a change in the code. To achieve this, we created a CI/CD pipeline by using Jenkins. Basically a Jenkinfiles is needed by Jenkins which manages this pipeline process. Whenever there is a new commit in the github repository, the jenkin server sitting in a newly created EC2 instance, will git pull and then  mvn package followed by creating the jar/zip of our application would either deploy our application on production or development environment based on the github branch being committed. The eb_deploy scripts are called in the Jenkinfiles. These scripts deploy the application
 
 
 In the last method all components had to be configured manually and every code update had to be deployed manually on every running instance, which is a lot of work. AWS provids the service Elastic Beanstalk to make this process easier. Elastic Beanstalk requires one setup and then it automatically handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring. When there are changes in the code, the new code can be uploaded once and EB takes care of updating every EC2 instance.
@@ -124,9 +124,9 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDg4OTEzNjc1LC00ODM4MzkxODYsOTcxNz
-cxMjUxLDE4ODI0MzI4MDUsLTIxNjkwNDU1NywtMTM0MDk0OTE0
-NCwxNDIxMDI4ODAxLC00OTcxNTkzMjksMTYzMDc0MjIwLDQ3ND
-MxOTE5NCwtMzA1MDE3OTgwLDE4MjcwMTM4MTEsLTE2MTc2MTg4
-MjIsMjA2ODIzMTkzNywtMzk0MzE3ODEwXX0=
+eyJoaXN0b3J5IjpbLTEwNzc1NTQ5ODgsLTQ4MzgzOTE4Niw5Nz
+E3NzEyNTEsMTg4MjQzMjgwNSwtMjE2OTA0NTU3LC0xMzQwOTQ5
+MTQ0LDE0MjEwMjg4MDEsLTQ5NzE1OTMyOSwxNjMwNzQyMjAsND
+c0MzE5MTk0LC0zMDUwMTc5ODAsMTgyNzAxMzgxMSwtMTYxNzYx
+ODgyMiwyMDY4MjMxOTM3LC0zOTQzMTc4MTBdfQ==
 -->
