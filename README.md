@@ -58,8 +58,10 @@ sudo docker run --name jrvs-psql \
 This completes the process of dockerizing our application. The diagram below shows the process.
 
  <img src="src/assets/images/docker.png" alt="docker"></p>
+  <img src="src/assets/images/docker1.png" alt="aws"></p>
 
-# AWS Cloud
+
+# Manual Deployment on AWS cloud
 
 I did a number of small experiments on AWS to deploy my project to the cloud, here is a summary of what I did:
 
@@ -87,12 +89,12 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
 
 
  
-    <img src="src/assets/images/trading-aws.png" alt="aws"></p>
+   <img src="src/assets/images/trading-aws.png" alt="aws"></p>
 
   <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5NzE1OTMyOSwxNjMwNzQyMjAsNDc0Mz
-E5MTk0LC0zMDUwMTc5ODAsMTgyNzAxMzgxMSwtMTYxNzYxODgy
-MiwyMDY4MjMxOTM3LC0zOTQzMTc4MTBdfQ==
+eyJoaXN0b3J5IjpbMTQyMTAyODgwMSwtNDk3MTU5MzI5LDE2Mz
+A3NDIyMCw0NzQzMTkxOTQsLTMwNTAxNzk4MCwxODI3MDEzODEx
+LC0xNjE3NjE4ODIyLDIwNjgyMzE5MzcsLTM5NDMxNzgxMF19
 -->
