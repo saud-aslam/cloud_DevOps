@@ -86,7 +86,7 @@ The architecture is shown below.
 <p align="center">
 <img src="src/assets/images/trading-aws.png" alt="aws"></p>
 
-# Jenkins and Elastic Beanstalk
+# Elastic Beanstalk and Jenkins
 
 In the last method all components had to be configured manually and every code update had to be deployed manually on every running instance, which is a lot of work. AWS provids the service Elastic Beanstalk to make this process easier. Elastic Beanstalk requires one setup and then it automatically handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring. When there are changes in the code, the new code can be uploaded once and EB takes care of updating every EC2 instance.
 
@@ -115,9 +115,9 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
 <img src="src/assets/images/Jenkins.png" alt="jenkins" width="800" height="800"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTcxNzcxMjUxLDE4ODI0MzI4MDUsLTIxNj
-kwNDU1NywtMTM0MDk0OTE0NCwxNDIxMDI4ODAxLC00OTcxNTkz
-MjksMTYzMDc0MjIwLDQ3NDMxOTE5NCwtMzA1MDE3OTgwLDE4Mj
-cwMTM4MTEsLTE2MTc2MTg4MjIsMjA2ODIzMTkzNywtMzk0MzE3
-ODEwXX0=
+eyJoaXN0b3J5IjpbNjM2ODEyNDY3LDk3MTc3MTI1MSwxODgyND
+MyODA1LC0yMTY5MDQ1NTcsLTEzNDA5NDkxNDQsMTQyMTAyODgw
+MSwtNDk3MTU5MzI5LDE2MzA3NDIyMCw0NzQzMTkxOTQsLTMwNT
+AxNzk4MCwxODI3MDEzODExLC0xNjE3NjE4ODIyLDIwNjgyMzE5
+MzcsLTM5NDMxNzgxMF19
 -->
