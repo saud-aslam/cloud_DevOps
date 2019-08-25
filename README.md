@@ -10,7 +10,7 @@ The deployment of this application to cloud was done on Amazon Web Services (AWS
 
 The aim was to deploy the application on EC2 instances by running docker containers of our application on it. Since our application also runs Postgresql database, we need an extra container in addition of the parent application container. Both of these containers are independent to each other but we need them to communicate. For that a network bridge is created in docker. 
 #### DockerFiles
-There are two Dockerfiles each for each containers. These dockerfiles have commands in them which pulls docker images from DockerHub and creates local images in our docker and then when we run our local images, we get our containers. The trading-app dockerfile loads two images from DockerHub: ***Maven*** image which is used to build and package the source code by following pom.xml; ***openjdk:8-alpine*** which is use to run our java application. The psql dockerfile loads one image from DockerHub:***postgres*** which is used to run postgres database and  also build all tables based on the schema which is provided under *trading_ddl* folder.
+There are two Dockerfiles each for each containers. These dockerfiles have commands in them which pulls docker images from DockerHub and creates local images in our docker and then when we run our local images, we get our containers. The trading-app dockerfile loads two images from DockerHub: ***Maven*** image which is used to build and package the source code by following pom.xml; ***openjdk:8-alpine*** which is use to run our java application. The psql dockerfile loads one image from DockerHub: ***postgres*** which is used to run postgres database and  also build all tables based on the schema which is provided under *trading_ddl* folder.
 
 
 
@@ -103,7 +103,7 @@ This diagram shows the architecture of the deployment with Elastic Beanstalk and
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM2MDc1MTg4OCwtMjA3NDE0MTc0NSw1Nj
+eyJoaXN0b3J5IjpbLTE2MTc2ODk1NiwtMjA3NDE0MTc0NSw1Nj
 E4NTMxMjEsLTQ4MzgzOTE4Niw5NzE3NzEyNTEsMTg4MjQzMjgw
 NSwtMjE2OTA0NTU3LC0xMzQwOTQ5MTQ0LDE0MjEwMjg4MDEsLT
 Q5NzE1OTMyOSwxNjMwNzQyMjAsNDc0MzE5MTk0LC0zMDUwMTc5
