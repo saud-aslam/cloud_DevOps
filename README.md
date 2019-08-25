@@ -80,7 +80,7 @@ The below diagram shows how the the ec2 server resides the docker containers.
 <p align="center">
  <img src="src/assets/images/docker1.png" alt="aws"></p>
 
-So far in the manual deployment we used our local database which is running on EC2 instance. Now we went a little advance in the approach and rather than running local psql container in the instance, we used AWS database service i.e RDS. This allows us to run our trading-app container on ec2 instances and database container on a separate private subnet database server. Further we also created autoscaling group and a load balancer which would automatically scale-up and scale-down the instances based on the  http request volume on Load balancer.
+So far in the manual deployment we used our local database which is running on EC2 instance. We went a little advance in the approach and rather than running local psql container in the instance, we used AWS database service i.e RDS. This allows us to run our trading-app container on ec2 instances and database container on a separate private subnet database server. Further we also created autoscaling group and a load balancer which would automatically scale-up and scale-down the instances based on the  http request volume on Load balancer.
 
 The architecture is shown below.
 <p align="center">
@@ -103,10 +103,10 @@ This diagram shows the architecture of the deployment with Elastic Beanstalk and
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMxODU0OTY5OSwtMTYxNzY4OTU2LC0yMD
-c0MTQxNzQ1LDU2MTg1MzEyMSwtNDgzODM5MTg2LDk3MTc3MTI1
-MSwxODgyNDMyODA1LC0yMTY5MDQ1NTcsLTEzNDA5NDkxNDQsMT
-QyMTAyODgwMSwtNDk3MTU5MzI5LDE2MzA3NDIyMCw0NzQzMTkx
-OTQsLTMwNTAxNzk4MCwxODI3MDEzODExLC0xNjE3NjE4ODIyLD
-IwNjgyMzE5MzcsLTM5NDMxNzgxMF19
+eyJoaXN0b3J5IjpbLTE3Mzg1NzI4NzcsLTMxODU0OTY5OSwtMT
+YxNzY4OTU2LC0yMDc0MTQxNzQ1LDU2MTg1MzEyMSwtNDgzODM5
+MTg2LDk3MTc3MTI1MSwxODgyNDMyODA1LC0yMTY5MDQ1NTcsLT
+EzNDA5NDkxNDQsMTQyMTAyODgwMSwtNDk3MTU5MzI5LDE2MzA3
+NDIyMCw0NzQzMTkxOTQsLTMwNTAxNzk4MCwxODI3MDEzODExLC
+0xNjE3NjE4ODIyLDIwNjgyMzE5MzcsLTM5NDMxNzgxMF19
 -->
