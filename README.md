@@ -90,7 +90,7 @@ The architecture is shown below.
 
 The manual deployment of our trading-app which is performed above has a problem i.e It is time consuming to manually deploy the application on every instances whenever there is an update in our code. It will not be fun to docker build the application component on every instances.
 
-This problem is solved by using Elastic Beanstalk (EB). By using this service of AWS, one can fully rely on EB to manage and upload the latest version of the code in all the running instances. All we need to do is to mvn package our so
+This problem is solved by using Elastic Beanstalk (EB). By using this service of AWS, one can fully rely on EB to manage and upload the latest version of the code in all the running instances. All we need to do is to *mvn package* our source code and upload the jar/zip file into the aws eb 
 
 In the last method all components had to be configured manually and every code update had to be deployed manually on every running instance, which is a lot of work. AWS provids the service Elastic Beanstalk to make this process easier. Elastic Beanstalk requires one setup and then it automatically handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring. When there are changes in the code, the new code can be uploaded once and EB takes care of updating every EC2 instance.
 
@@ -121,7 +121,7 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcwMjAyMjIzOCw5NzE3NzEyNTEsMTg4Mj
+eyJoaXN0b3J5IjpbMTk3MjIzNTU5Nyw5NzE3NzEyNTEsMTg4Mj
 QzMjgwNSwtMjE2OTA0NTU3LC0xMzQwOTQ5MTQ0LDE0MjEwMjg4
 MDEsLTQ5NzE1OTMyOSwxNjMwNzQyMjAsNDc0MzE5MTk0LC0zMD
 UwMTc5ODAsMTgyNzAxMzgxMSwtMTYxNzYxODgyMiwyMDY4MjMx
