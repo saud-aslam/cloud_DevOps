@@ -92,7 +92,7 @@ The manual deployment of our trading-app which is performed above has a problem 
 
 This problem is solved by using Elastic Beanstalk (EB). By using this service of AWS, one can fully rely on EB to manage and upload the latest version of the code in all the running instances. All we need to do is to *mvn package* our source code and upload the jar/zip file. We also created two environment, namely, Development and Production.
 
-Going further, we did more automation as we wanted to get rid of maven packaging and uploading our application jar/zip file every time there is a change in the code. To achieve this, we created a CI/CD pipeline by using Jenkins. Basically a Jenkinfiles is needed by Jenkins which manages this pipeline process. Whenever there is a new commit in the github repository, 
+Going further, we did more automation as we wanted to get rid of maven packaging and uploading our application jar/zip file every time there is a change in the code. To achieve this, we created a CI/CD pipeline by using Jenkins. Basically a Jenkinfiles is needed by Jenkins which manages this pipeline process. Whenever there is a new commit in the github repository, the jenkin server sitting in a newly created EC2 instance
 
 
 
@@ -125,9 +125,9 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzk0NjUxOTAxLDk3MTc3MTI1MSwxODgyND
-MyODA1LC0yMTY5MDQ1NTcsLTEzNDA5NDkxNDQsMTQyMTAyODgw
-MSwtNDk3MTU5MzI5LDE2MzA3NDIyMCw0NzQzMTkxOTQsLTMwNT
-AxNzk4MCwxODI3MDEzODExLC0xNjE3NjE4ODIyLDIwNjgyMzE5
-MzcsLTM5NDMxNzgxMF19
+eyJoaXN0b3J5IjpbLTExNDc2NDk4ODgsOTcxNzcxMjUxLDE4OD
+I0MzI4MDUsLTIxNjkwNDU1NywtMTM0MDk0OTE0NCwxNDIxMDI4
+ODAxLC00OTcxNTkzMjksMTYzMDc0MjIwLDQ3NDMxOTE5NCwtMz
+A1MDE3OTgwLDE4MjcwMTM4MTEsLTE2MTc2MTg4MjIsMjA2ODIz
+MTkzNywtMzk0MzE3ODEwXX0=
 -->
