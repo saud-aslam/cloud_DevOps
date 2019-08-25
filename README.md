@@ -82,7 +82,7 @@ The below diagram shows how the the ec2 server resides the docker containers.
   <img src="src/assets/images/docker1.png" alt="aws"></p>
 
 
-So far in the manual deployment we used our local database which is running on EC2 instance. Now we went a little advance in the approach and rather than running local psql container in the instance, we used AWS database service i.e RDS. This 
+So far in the manual deployment we used our local database which is running on EC2 instance. Now we went a little advance in the approach and rather than running local psql container in the instance, we used AWS database service i.e RDS. This allows us to run our trading-app container on ec2 instances and database container on a separate private subnet database server.
 # Jenkins and Elastic Beanstalk
 
 The problem with the above approach is that it took a while to set it up, and updating my project way too time consuming. If I wanted to use a newer version of my app, I basically needed to log in to each instance and pull the latest docker image.  
@@ -105,8 +105,8 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
 <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk0NjU2NTIyOCwtMjE2OTA0NTU3LC0xMz
-QwOTQ5MTQ0LDE0MjEwMjg4MDEsLTQ5NzE1OTMyOSwxNjMwNzQy
-MjAsNDc0MzE5MTk0LC0zMDUwMTc5ODAsMTgyNzAxMzgxMSwtMT
-YxNzYxODgyMiwyMDY4MjMxOTM3LC0zOTQzMTc4MTBdfQ==
+eyJoaXN0b3J5IjpbODgxMDg4MDIxLC0yMTY5MDQ1NTcsLTEzND
+A5NDkxNDQsMTQyMTAyODgwMSwtNDk3MTU5MzI5LDE2MzA3NDIy
+MCw0NzQzMTkxOTQsLTMwNTAxNzk4MCwxODI3MDEzODExLC0xNj
+E3NjE4ODIyLDIwNjgyMzE5MzcsLTM5NDMxNzgxMF19
 -->
