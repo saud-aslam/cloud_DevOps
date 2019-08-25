@@ -88,6 +88,14 @@ The architecture is shown below.
 
 # Jenkins and Elastic Beanstalk
 
+In the last method all components had to be configured manually and every code update had to be deployed manually on every running instance, which is a lot of work. AWS provids the service Elastic Beanstalk to make this process easier. Elastic Beanstalk requires one setup and then it automatically handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring. When there are changes in the code, the new code can be uploaded once and EB takes care of updating every EC2 instance.
+
+The need to manually upload new code can be eliminated by using a CI/CD (Continuous Integration/Continuous Deployment) pipeline. In this project Jenkins was used to created such a pipeline. Jenkins monitors the trading_app GitHub repository. Whenever there is a new commit it will automatically compile, package, and deploy the new code to all running EC2 instances.
+
+Jenkins requires a  [Jenkinsfiles](https://github.com/MiriamEA/trading_app/blob/master/Jenkinsfile)  that specifies how to handle the new code. The stage 'Build' packages the code using maven. The two stages 'Deploy-prod' and 'Deploy-dev' call script to deploy the code. The argument specifies which EB environment to use. This depends on the GitHub branch that was compiled. The actual deployment is done by the  [eb_deploy script](https://github.com/MiriamEA/trading_app/blob/master/scripts/eb_deploy.sh)  using the Elastic Beanstalk Command Line Interface.
+
+This diagram shows the architecture of the deployment with EB and Jenkins.
+
 The problem with the above approach is that it took a while to set it up, and updating my project way too time consuming. If I wanted to use a newer version of my app, I basically needed to log in to each instance and pull the latest docker image.  
 Luckliy, Elastic Beanstalk (EB) can fully automate the process. After setting up an EB project with the desired environment variables and port forwards, I can simply upload a jar file of the latest version of my trading-app to have it run on all the automatically generated instances. Then, whenever I want to update my project I simply upload a new jar file.
 
@@ -107,8 +115,9 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
 <img src="src/assets/images/Jenkins.png" alt="jenkins" width="800" height="800"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4MjQzMjgwNSwtMjE2OTA0NTU3LC0xMz
-QwOTQ5MTQ0LDE0MjEwMjg4MDEsLTQ5NzE1OTMyOSwxNjMwNzQy
-MjAsNDc0MzE5MTk0LC0zMDUwMTc5ODAsMTgyNzAxMzgxMSwtMT
-YxNzYxODgyMiwyMDY4MjMxOTM3LC0zOTQzMTc4MTBdfQ==
+eyJoaXN0b3J5IjpbMTkyNjg5MzcyNCwxODgyNDMyODA1LC0yMT
+Y5MDQ1NTcsLTEzNDA5NDkxNDQsMTQyMTAyODgwMSwtNDk3MTU5
+MzI5LDE2MzA3NDIyMCw0NzQzMTkxOTQsLTMwNTAxNzk4MCwxOD
+I3MDEzODExLC0xNjE3NjE4ODIyLDIwNjgyMzE5MzcsLTM5NDMx
+NzgxMF19
 -->
