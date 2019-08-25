@@ -77,12 +77,14 @@ Once the instance is running, it was time to configure the instance to run the t
 -ssh to EC2 public ip from the laptop's browser as like this: http://{EC2_pubic_ip}:8080/swagger-ui.html
 
 The below diagram shows how the the ec2 server resides the docker containers.
-
 <p align="center">
-  <img src="src/assets/images/docker1.png" alt="aws"></p>
+ <img src="src/assets/images/docker1.png" alt="aws"></p>
 
+So far in the manual deployment we used our local database which is running on EC2 instance. Now we went a little advance in the approach and rather than running local psql container in the instance, we used AWS database service i.e RDS. This allows us to run our trading-app container on ec2 instances and database container on a separate private subnet database server. Further we also created autoscaling group and a load balancer which would automatically scale-up and scale-down the instances based on the  http request volume on Load balancer.
 
-So far in the manual deployment we used our local database which is running on EC2 instance. Now we went a little advance in the approach and rather than running local psql container in the instance, we used AWS database service i.e RDS. This allows us to run our trading-app container on ec2 instances and database container on a separate private subnet database server. Further we also created autoscaling group and a load balancer which would automatically scale-up and scale-down the instances based on the load on Load balan
+The architecture is shown below.
+<p align="center">
+<img src="src/assets/images/trading-aws.png" alt="aws"></p>
 # Jenkins and Elastic Beanstalk
 
 The problem with the above approach is that it took a while to set it up, and updating my project way too time consuming. If I wanted to use a newer version of my app, I basically needed to log in to each instance and pull the latest docker image.  
@@ -98,14 +100,13 @@ The first problem is easy: I created two EB projects -- tradingApp-dev and tradi
 For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenkins server behind an NGINX reverse proxy. I set up Jenkins to listen to the project's GitHub repo, pull new commits, build new jar files, then push them to EB. I set it up to listen to the dev branch for tradingApp-dev, and the master branch for tradingApp-prod.
 
 
- <p align="center">
-<img src="src/assets/images/trading-aws.png" alt="aws"></p>
+ 
 
   <p align="center">
 <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDQ4MDU0MjEsLTIxNjkwNDU1NywtMT
+eyJoaXN0b3J5IjpbLTE4MzE5Nzg0MDQsLTIxNjkwNDU1NywtMT
 M0MDk0OTE0NCwxNDIxMDI4ODAxLC00OTcxNTkzMjksMTYzMDc0
 MjIwLDQ3NDMxOTE5NCwtMzA1MDE3OTgwLDE4MjcwMTM4MTEsLT
 E2MTc2MTg4MjIsMjA2ODIzMTkzNywtMzk0MzE3ODEwXX0=
