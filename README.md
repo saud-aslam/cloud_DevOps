@@ -96,6 +96,10 @@ Jenkins requires a  [Jenkinsfiles](https://github.com/MiriamEA/trading_app/blob/
 
 This diagram shows the architecture of the deployment with EB and Jenkins.
 
+ <p align="center">
+<img src="src/assets/images/Jenkins.png" alt="jenkins" width="800" height="800"></p>
+
+
 The problem with the above approach is that it took a while to set it up, and updating my project way too time consuming. If I wanted to use a newer version of my app, I basically needed to log in to each instance and pull the latest docker image.  
 Luckliy, Elastic Beanstalk (EB) can fully automate the process. After setting up an EB project with the desired environment variables and port forwards, I can simply upload a jar file of the latest version of my trading-app to have it run on all the automatically generated instances. Then, whenever I want to update my project I simply upload a new jar file.
 
@@ -111,11 +115,9 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
 
  
 
-  <p align="center">
-<img src="src/assets/images/Jenkins.png" alt="jenkins" width="800" height="800"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjM2ODEyNDY3LDk3MTc3MTI1MSwxODgyND
+eyJoaXN0b3J5IjpbMjUxMDk1NjgxLDk3MTc3MTI1MSwxODgyND
 MyODA1LC0yMTY5MDQ1NTcsLTEzNDA5NDkxNDQsMTQyMTAyODgw
 MSwtNDk3MTU5MzI5LDE2MzA3NDIyMCw0NzQzMTkxOTQsLTMwNT
 AxNzk4MCwxODI3MDEzODExLC0xNjE3NjE4ODIyLDIwNjgyMzE5
