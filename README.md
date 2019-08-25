@@ -72,7 +72,9 @@ To deploy the application on AWS cloud, I did some configuration on Amazon Web s
 Once the instance is running, it was time to configure the instance to run the trading-app. To do it :
 - Install docker 
 - Start and Enable docker
-- Install Git and Clone git trading-app repo `git clone https://your_git_url`
+- Install Git and Clone git trading-app repo : `git clone https://[https://github.com/saud-aslam/trading-app`
+- docker build and run to dockerize the app and mentioned below.
+- 
 
 -   Now that I had docker images and scripts to dockerize my application, I could quickly set up my application on an Amazon EC2 instance.
 -   I created an image of that instance so that I could launch copies of it from a launch template.
@@ -103,8 +105,8 @@ For the second problem, I used Jenkins: I made a new EC2 instance to host a Jenk
   <img src="src/assets/images/Jenkins.png" alt="jenkins"></p>
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDgyMzMwNDkzLDE0MjEwMjg4MDEsLTQ5Nz
-E1OTMyOSwxNjMwNzQyMjAsNDc0MzE5MTk0LC0zMDUwMTc5ODAs
-MTgyNzAxMzgxMSwtMTYxNzYxODgyMiwyMDY4MjMxOTM3LC0zOT
-QzMTc4MTBdfQ==
+eyJoaXN0b3J5IjpbLTE4NzkwMjg4NzQsMTQyMTAyODgwMSwtND
+k3MTU5MzI5LDE2MzA3NDIyMCw0NzQzMTkxOTQsLTMwNTAxNzk4
+MCwxODI3MDEzODExLC0xNjE3NjE4ODIyLDIwNjgyMzE5MzcsLT
+M5NDMxNzgxMF19
 -->
